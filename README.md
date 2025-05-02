@@ -1,40 +1,41 @@
 
 # 🚀 Auto TESS-Localize
 
-**Auto TESS-Localize** is an automated tool built on top of the [`TESS-Localize`](https://github.com/Higgins21/TESS-Localized) package (Higgins et al. 2022). It allows systematic analysis of a list of TESS targets with known sector and orbital period.
+**Auto TESS-Localize** is an automated extension of the [`TESS-Localize`](https://github.com/Higgins21/TESS-Localized) package (Higgins et al. 2022).  
+It enables batch analysis of multiple TESS targets (TICs), given known sectors and periods, producing high-resolution outputs and formatted results.
 
 ---
 
 ## 🧭 Purpose
 
-To streamline and speed up the use of `TESS-Localize` on multiple TESS targets (TICs), providing a clean Python interface that converts periods into frequencies and automates the process of locating the origin of periodic signals observed in TESS light curves.
+To streamline and accelerate the application of `TESS-Localize` across multiple targets, converting orbital periods into frequencies and automating the identification of the origin of periodic signals in TESS light curves.
 
 ---
 
 ## ⚙️ Features
 
-- Input: list of targets with `TIC`, `Sector`, and `Period (in days)`;
-- Automatic conversion of period to frequency (`1 / period`);
-- Batch execution of the localization analysis using `tl.Localize`;
-- Retrieval of the **best-matching Gaia DR3 source** using `astroquery.vizier`;
-- Comparison with the **Gaia DR3 source ID associated with the TIC** (via MAST);
-- Automatic generation of visual outputs:
-  - SNR maps with the input TIC highlighted in **red**;
-  - Light curve plots with fitted model;
-- Results compiled in a structured output.
+- **User input via file selection** (`.txt` format with headers: `TIC, Sector, Period`);
+- **Automatic period-to-frequency conversion** (`1 / period`);
+- **Integration with TESS-Localize** for target localization;
+- **Gaia DR3 source comparison** using `astroquery.vizier` and `mast`;
+- **SNR maps with target highlighted in red**;
+- **Light curve plots** with fitted model;
+- **Numerical outputs** saved with 6 decimal precision;
+- **Progress tracking** for batch execution.
 
 ---
 
 ## 📁 Outputs
 
-- **`TESS-Localize images/`**:  
-  Contains two figures per TIC:
-  - `TIC<id>_setor<sector>_SNR.png`: SNR map with Gaia sources and best-fit location;
-  - `TIC<id>_setor<sector>_LCfit.png`: light curve with fitted model.
+- **Folder:** `TESS-Localize images/`
+  - `TIC<id>_<sector>_SNR.png`: SNR map with Gaia stars and fitted source;
+  - `TIC<id>_<sector>_LCfit.png`: Light curve with best-fit model.
 
-- **Optional CSV file**:
+- **CSV Output:** `result Auto TESS_Localize.csv`
   ```csv
-  TIC, Sector, Period (days), Frequency, Gaia DR3 Source (TIC), Best Source (Localize), Match?
+  TIC, Sector, Period (days), Frequency (1/day),
+  Source Gaia DR3 (TIC), Best Gaia Source (Localize),
+  p-value, Relative Likelihood, Match?
   ```
 
 ---
@@ -42,37 +43,33 @@ To streamline and speed up the use of `TESS-Localize` on multiple TESS targets (
 ## 🧪 Requirements
 
 - Python 3.8+
-- Packages:
+- Required packages:
   - `lightkurve`
   - `astropy`
   - `matplotlib`
   - `astroquery`
   - `pandas`
-  - `TESS-Localize` (from Higgins et al.2022)
+  - `inquirer`
+  - `TESS-Localize` (from Higgins et al. 2022)
 
-Install with:
+Install them with:
 
 ```bash
-pip install lightkurve astropy matplotlib astroquery pandas
+pip install lightkurve astropy matplotlib astroquery pandas inquirer
 ```
 
-Make sure the `TESS_Localize` module is installed and available in your environment.
+Make sure the `TESS_Localize` module is correctly installed and accessible in your environment.
 
 ---
 
 ## 🙌 Citation & Acknowledgments
 
-This project was developed as an automated extension of `TESS-Localize`, designed to support large-scale photometric studies involving stellar variability and periodic signal localization.
-If you use this tool in your research, please cite the original author (Higgins et al. 2022) and consider acknowledging this repository by referencing its GitHub link.
-Community contributions and feedback are always welcome!
-
+This project was developed as a batch-processing extension of `TESS-Localize`, tailored for large-scale photometric analysis in stellar variability.  
+If you use this tool in your research, please **cite Higgins et al. (2022)** and consider referencing this GitHub repository to support continued development.
 
 ---
 
 ## 📚 Reference
 
 > Higgins, A., et al. (2022). *TESS-Localized: A tool for identifying the spatial origin of periodic signals in TESS pixel data*.  
-> [`2022ascl.soft04005H`](https://ui.adsabs.harvard.edu/abs/2022ascl.soft04005H/abstract) 
-
----
-
+> [`2022ascl.soft04005H`](https://ui.adsabs.harvard.edu/abs/2022ascl.soft04005H/abstract)
