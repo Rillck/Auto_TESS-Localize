@@ -1,0 +1,2 @@
+TIC,Sector,Period
+103580569,41,2.5
