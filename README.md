@@ -50,15 +50,13 @@ To streamline and accelerate the application of `TESS-Localize` across multiple 
   - `astroquery`
   - `pandas`
   - `inquirer`
-  - `TESS-Localize` (from Higgins et al. 2022)
+  - `TESS_Localize` (from Higgins et al. 2022)
 
 Install them with:
 
 ```bash
-pip install lightkurve astropy matplotlib astroquery pandas inquirer
+pip install lightkurve astropy matplotlib astroquery pandas inquirer TESS_Localize
 ```
-
-Make sure the `TESS_Localize` module is correctly installed and accessible in your environment.
 
 ---
 
