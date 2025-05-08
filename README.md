@@ -1,4 +1,3 @@
-
 # 🚀 Auto TESS-Localize
 
 **Auto TESS-Localize** is an automated extension of the [`TESS-Localize`](https://github.com/Higgins21/TESS-Localized) package (Higgins et al. 2022).  
@@ -23,6 +22,9 @@ To streamline and accelerate the application of `TESS-Localize` across multiple 
 - **Numerical outputs** saved with 6 decimal precision;
 - **Progress tracking** for batch execution.
 
+- **Optional local mode (`Auto_TESS-Localize_local.py`)**: skips online Gaia ID lookup and instead requires a `DR3Name` column in the input file.
+
+
 ---
 
 ## 📁 Outputs
@@ -38,6 +40,20 @@ To streamline and accelerate the application of `TESS-Localize` across multiple 
   p-value, Relative Likelihood, Match?
   ```
 
+## 🛠️ Alternative Version: Auto_TESSLocalize_local.py
+
+This version of the script is designed for users who **already have the Gaia DR3 source IDs** for their TIC targets and want to avoid performing online queries.
+
+### ✅ Key Differences:
+- Skips the Gaia ID query via `astroquery`.
+- Requires an additional column named `DR3Name` in the input `.txt` file:
+  
+  ```csv
+  TIC, Sector, Period, DR3Name```
+  
+- The script uses the DR3Name directly for comparison and analysis.
+- This is especially useful when working to reduce query time for large datasets.
+  
 ---
 
 ## 🧪 Requirements
