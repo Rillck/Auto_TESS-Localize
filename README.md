@@ -49,7 +49,7 @@ This version of the script is designed for users who **already have the Gaia DR3
 - Requires an additional column named `DR3Name` in the input `.txt` file:
   
   ```csv
-  TIC, Sector, Period, DR3Name```
+  TIC, Sector, Period, DR3Name
   
 - The script uses the DR3Name directly for comparison and analysis.
 - This is especially useful when working to reduce query time for large datasets.
