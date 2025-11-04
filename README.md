@@ -1,17 +1,17 @@
-# 🚀 Auto TESS-Localize
+# Auto TESS-Localize
 
-**Auto TESS-Localize** is an automated extension of the [`TESS-Localize`](https://github.com/Higgins21/TESS-Localized) package (Higgins et al. 2022).  
+**Auto TESS-Localize** is an automated extension of the [`TESS-Localize`](https://github.com/Higgins00/TESS-Localized) package (Higgins et al. 2022).  
 It enables batch analysis of multiple TESS targets (TICs), given known sectors and periods, producing high-resolution outputs and formatted results.
 
 ---
 
-## 🧭 Purpose
+## Purpose
 
 To streamline and accelerate the application of `TESS-Localize` across multiple targets, converting orbital periods into frequencies and automating the identification of the origin of periodic signals in TESS light curves.
 
 ---
 
-## ⚙️ Features
+## Features
 
 - **User input via file selection** (`.txt` format with headers: `TIC, Sector, Period`);
 - **Automatic period-to-frequency conversion** (`1 / period`);
@@ -27,7 +27,7 @@ To streamline and accelerate the application of `TESS-Localize` across multiple 
 
 ---
 
-## 📁 Outputs
+## Outputs
 
 - **Folder:** `TESS-Localize images/`
   - `TIC<id>_<sector>_SNR.png`: SNR map with Gaia stars and fitted source;
@@ -40,11 +40,11 @@ To streamline and accelerate the application of `TESS-Localize` across multiple 
   p-value, Relative Likelihood, Match?
   ```
 
-## 🛠️ Alternative Version: Auto_TESSLocalize_local.py
+## Alternative Version: Auto_TESSLocalize_local.py
 
 This version of the script is designed for users who **already have the Gaia DR3 source IDs** for their TIC targets and want to avoid performing online queries.
 
-### ✅ Key Differences:
+### Key Differences:
 - Skips the Gaia ID query via `astroquery`.
 - Requires an additional column named `DR3Name` in the input `.txt` file:
   
@@ -56,7 +56,7 @@ This version of the script is designed for users who **already have the Gaia DR3
   
 ---
 
-## 🧪 Requirements
+## Requirements
 
 - Python 3.8+
 - Required packages:
@@ -76,14 +76,21 @@ pip install lightkurve astropy matplotlib astroquery pandas inquirer TESS_Locali
 
 ---
 
-## 🙌 Citation & Acknowledgments
+## Citation & Acknowledgments
 
 This project was developed as a batch-processing extension of `TESS-Localize`, tailored for large-scale photometric analysis in stellar variability.  
-If you use this tool in your research, please **cite Higgins et al. (2022)** and consider referencing this GitHub repository to support continued development.
+If you use this tool in your research, please **cite Higgins et al. (2022), De Amorim, R.G.S.B, et al. (in prep)** and consider referencing this GitHub repository to support continued development.
 
 ---
 
-## 📚 Reference
+## Citation
+
+> De Amorim, R.G.S.B, et al. (in prep). *In the quest for pulsation in main-sequence M Dwarf stars from TESS observations*
+> [`inp rep`](www.futurelink.com)
 
 > Higgins, A., et al. (2022). *TESS-Localized: A tool for identifying the spatial origin of periodic signals in TESS pixel data*.  
 > [`2022ascl.soft04005H`](https://ui.adsabs.harvard.edu/abs/2022ascl.soft04005H/abstract)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
