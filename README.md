@@ -83,7 +83,7 @@ If you use this tool in your research, please **cite Higgins et al. (2022), De A
 
 ---
 
-## Citation
+## Reference
 
 > De Amorim, R.G.S.B, et al. (in prep). *In the quest for pulsation in main-sequence M Dwarf stars from TESS observations*
 > [`inp rep`](www.futurelink.com)
